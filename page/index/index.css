@@ -1,0 +1,9 @@
+body{
+    width:100%;
+    height:800px;
+    background-color: paleturquoise;
+}
+h1{
+    background-color: deeppink;
+    font-size: 100px;
+}
