@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width:400px;
+            height:20px;
+            margin: 50px auto;
+            border: 1px solid yellow;
+            position: relative;
+            overflow: hidden;
+        }
+        #contain{
+            width:1500px;
+            height:inherit;
+            position: absolute;
+        }
+        .slider{
+            width:300px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+
+            function auto(){
+                /*var offset = -300;*/
+                /*var totaltime = 500;*/
+                var stepoffset = -10;
+                var steptime = 200;
+
+               var intervalId = setInterval(function () {
+                    var left = document.getElementById('contain').offsetLeft;
+                    var targetleft = left+stepoffset;
+
+                    if(targetleft===-1500){
+                        targetleft =0 ;
+                    }
+
+                   document.getElementById('contain').style.left = targetleft + "px";
+                },steptime);
+            }
+            auto();
+        };
+    </script>
+</head>
+<body>
+<div class="box">
+    <div id="contain">
+        <div class="slider">1,你好哇，hello</div>
+        <div class="slider">2,你好哇，hello</div>
+        <div class="slider">3,你好哇，hello</div>
+        <div class="slider">4,你好哇，hello</div>
+        <div class="slider">5,你好哇，hello</div>
+    </div>
+
+</div>
+</body>
+</html>

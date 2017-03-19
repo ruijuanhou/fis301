@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width:110px;
+            height:40px;
+            line-height: 40px;
+            border:1px solid #999999;
+            border-radius: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            /*计时器*/
+            function timeCount(){
+                var box = document.getElementById('box');
+                var num = 5;
+                var intervalId = setInterval(
+                    function(){
+                        box.innerHTML=num +'s后重新获取';
+                        num--;
+                        if(num <0){
+                            document.getElementById('box').innerHTML = '获取验证码';
+                            clearInterval(intervalId);
+                            num = 5;
+
+                        }
+
+                    },1000);
+            }
+            document.getElementById('box').onclick=timeCount;
+        }
+    </script>
+</head>
+<body>
+<div  id="box">
+    发送验证码
+</div>
+</body>
+</html>

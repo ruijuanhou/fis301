@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            border:1px solid #e3e4e5;
+        }
+        .item-img{
+            transition: transform 1s;//transition 是过度，
+        }
+        .item-img:hover{
+            transform:
+                    translateY(-10px);
+            /*mask-image:10dpcm;*/
+                     /*rotate(30deg);*/
+            /*scale(2,4);*/
+            /*skew(45deg,10deg)*/
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <img src="./img/1.jpg" class="item-img">
+    <script src="../../static/script/jquery-1.11.3.js"></script>
+    <!--<script>-->
+        <!--$('.list-img').hover(function(){-->
+            <!--$(this).css-->
+        <!--},function(){});-->
+    <!--</script>-->
+</div>
+</body>
+</html>
