@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = '12str';
+        console.log(str,typeof (str));//string,
+        console.log(str++);//NaN
+        console.log(typeof(str++));//  number
+        console.log(str);//NaN
+        console.log(1+'01');//101
+        console.log(parseInt('01'),parseInt('01ster'),
+            parseInt('06/2017/03'),parseInt('ox2'));//1,1,6,NaN
+        var x=1,y=z=j=0;
+        function add(n){
+
+            n=n+1;
+            return n;
+        }
+        y=add(x);
+
+        function add2 (n){
+           return n=n+3;
+        }
+        function add3(n){
+            n=n+4;
+        }
+        z=add2(x);
+        j=add3(x);
+        console.log(x,y,z,j);//1,2,4,undefined;
+       /*
+       * */
+        var fan = function ff(){
+            console.log(fan==ff);
+        };
+        fan();//true
+       /**/
+       function parseQueryString (url) {
+           var str = url.split('?')[1];
+           var items = str.split('&');
+           var arr,Json={};
+           for(var i=0;i<items.length;i++){
+              arr = items[i].split('=');
+              Json[arr[0]]=arr[1];
+           }
+           return Json;
+       }
+       var url = 'http://baidu.com/?name=jone&age=18&sex=male';
+       var obj = parseQueryString(url);
+       console.log(obj);
+       console.log(url);//字符串没有改变
+       console.log(url.split('?'));
+        //['http://baidu.com/','name=jone&age=18&sex=male']
+        console.log(url.split('?')[1].split('&'));//['name=jone','age=18','sex=male']
+
+    var list = url.split('?')[1].split('&');
+    list.forEach(function(){
+//        var str = this.split('=');
+//        return str;
+    });
+        /*闭包*/
+        var num = 100;
+        function outF(){
+            var num = 887;
+            num++;
+            return function innerF() {
+                console.log(num);
+            }
+
+        }
+        var a=outF();
+       a();//888
+        a();//888
+        console.log(a);//function inner()
+        var b = function(){
+            console.log(s);
+        };
+        console.log(b);
+        var c = function d(){
+            console.log(typeof(d));
+            console.log(c==d);
+        };
+        c();//true;
+        console.log(typeof (c),typeof (d));//function,undefined
+        console.log(c==d);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
